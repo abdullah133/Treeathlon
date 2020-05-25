@@ -1,0 +1,113 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'post_app/css/post_custom.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<body class="blog">
+
+
+
+
+  <!--================Blog Area =================-->
+  <section class="blog_area single-post-area section-gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 posts-list">
+          <div class="single-post row">
+            <div class="col-lg-12">
+              <div class="feature-img">
+                <img src="{% if post.img %}{{ post.img.url }}{% else %}{% static 'img/download.png' %}{% endif %}" class="img-fluid" alt="Responsive image">
+              </div>
+            </div>
+            <div class="col-lg-3  col-md-3">
+              <div class="blog_info text-right">
+
+                <ul class="blog_meta list">
+                  <li><a href="#">{{ post.author }}<i class="lnr lnr-user"></i></a></li>
+                  <li><a href="#">{{ post.date_posted|date:"F d, Y" }}<i class="lnr lnr-calendar-full"></i></a></li>
+
+                </ul>
+                <ul class="social-links">
+                  <li><a href="https://www.facebook.com/treeathlonWien/"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://twitter.com/TreeathlonWien"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/treeathlon/"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 blog_details">
+              <h2>{{ object.title }}</h2>
+              <p class="excert">
+                {{ object.content|linebreaks }}
+                < </p> </div> </div> </div> <div class="col-lg-4">
+                  <div class="blog_right_sidebar">
+
+                    <aside class="single_sidebar_widget author_widget">
+                      <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
+                      <h4>Für Klimaschutz begeistern</h4>
+
+                      <div class="social_icon">
+                        <a href="https://www.facebook.com/treeathlonWien/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/TreeathlonWien"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/treeathlon/"><i class="fa fa-instagram"></i></a>
+                      </div>
+                      <p> In diesem Blog wollen wir relevante Themen präsentieren, um zu inspirieren und neue Ansätze zur Stadtbegrünung sowie lokaler Klimagerechtigkeit ans Licht zu bringen. </p>
+                      <div class="br"></div>
+                    </aside>
+
+
+
+
+
+
+
+                    <aside class="single-sidebar-widget newsletter_widget">
+                      <h4 class="widget_title">Newsletter</h4>
+                      <p>
+                        Melde dich für den Newsletter an und bleibe immer am neusten Stand!
+                      </p>
+                      <form action="{% url 'base_app:newsletter_page' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group d-flex flex-row">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                            </div>
+
+                            {{ join_form.as_p }}
+                          </div>
+                          <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+                          <input type="submit" class="bbtns" value="Join">
+                        </div>
+
+
+                        {% if join_form.errors %}
+
+                        {% for error in join_form.non_field_errors %}
+                        <div class="alert alert-danger">
+                          <strong>{{ error|escape }}</strong>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                      </form>
+
+
+
+                      <div class="br"></div>
+                    </aside>
+
+
+
+                  </div>
+            </div>
+          </div>
+        </div>
+  </section>
+  <!--================Blog Area =================-->
+
+
+  {% endblock %}

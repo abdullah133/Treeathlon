@@ -1,0 +1,202 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+{% block title %}About{% endblock %}
+{% block head %}
+{% block content %}
+<section class="home-banner-area relative">
+  <div class="container-fluid">
+    <div class="row  d-flex align-items-center justify-content-center">
+      <div class="header-left col-lg-5 col-md-6 ">
+
+      </div>
+      <div class="col-lg-7 col-md-6 col-sm-8 header-right">
+        <div class="owl-carousel owl-banner">
+          <!-- <img class="img-fluid w-100" src="{% static 'img/about.jpg' %}" alt=""> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<br>
+
+
+<section class="page-section cta">
+  <div class="container">
+
+
+
+    	<div class="contact1">
+    		<div class="container-contact1">
+    			<div class="contact1-pic js-tilt" data-tilt>
+    				<!-- <img src="{% static 'contact_app/images/img-01.png' %}" alt="IMG"> -->
+    			</div>
+
+    			<form class="contact1-form validate-form"  method="post">
+    				<span class="contact1-form-title">
+    					Get in touch
+
+    				</span>
+
+
+
+
+            <div class="wrap-input1 validate-input">
+              {{ form.betreff.label_tag }}
+            {{ form.betreff }}
+                {{ form.betreff.errors }}
+              <span class="shadow-input1"></span>
+            </div>
+
+            <div class="wrap-input1 validate-input">
+                {{ form.email.label_tag }}
+              {{ form.email }}
+            {{ form.email.errors }}
+              <span class="shadow-input1"></span>
+            </div>
+
+    				<div class="wrap-input1 validate-input">
+                      {{ form.nachricht.label_tag }}
+    					  {{ form.nachricht }}
+                    {{ form.nachricht.errors }}
+    					<span class="shadow-input1"></span>
+    				</div>
+
+    				<div class="container-contact1-form-btn">
+    					<button class="contact1-form-btn" type="submit">
+    						<span>
+    							Send Email
+    							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    						</span>
+    					</button>
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+
+
+
+
+  </div>
+</section>
+  {% endblock %}
+
+{% endblock %}
+
+
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <div class="logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10">
+                        <nav class="main-menu mobile-menu">
+                            <ul>
+                                <li><a href="./index.html">Home</a></li>
+                                <li><a href="./about-us.html">About us</a></li>
+                                <li><a href="./classes.html">Classes</a></li>
+                                <li><a href="./blog.html">Blog</a></li>
+                                <li><a class="active" href="./contact.html">Contact</a></li>
+                                <li class="phone-num"><i class="fa fa-phone"></i><span>+546 990221 123</span></li>
+                                <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Hero Section Begin -->
+    <div class="hero-section set-bg" data-setbg="img/contact-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-text">
+                        <h1>Contact</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+    <!-- Contact Section Begin -->
+
+    <!-- Contact Section End -->
+    <!-- Map Section Begin -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24182.553681405774!2d-73.99529774360377!3d40.744003480221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259737e225aa1%3A0x652ff78189c0e104!2sStuyvesant%20Town-Peter%20Cooper%20Village%2C%20New%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1567961277124!5m2!1sen!2sbd"
+            height="585" style="border:0" allowfullscreen></iframe>
+        <div class="map-address">
+            <div class="map-address-text">
+                <ul>
+                    <li>Main Str, no 23, <br />NY, New York PK 23589</li>
+                    <li>+546 990221 123 <br />contact@industryalinc.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Map Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text">
+                        <div class="reserved"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Search model -->
+	<div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">+</div>
+			<form class="search-model-form">
+				<input type="text" id="search-input" placeholder="Search here.....">
+			</form>
+		</div>
+	</div>
+
+
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.js" integrity="sha256-8jo9SwZ1Py4uQCKOHKt+1mXPnt5f7O6ZkY7WLXxU7tg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha256-4OK8Th0+5QJMThqlimytmqQvxjqMic4YATocjyuUh1w=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js" integrity="sha256-2XpjfLL5tRYLa3AAM0gz6aAY0zxvHogDzTWemxkTPDg=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

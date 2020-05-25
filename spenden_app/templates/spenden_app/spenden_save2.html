@@ -1,0 +1,89 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'spenden_app/css/spenden_custom.css' %}">
+
+{% endblock %}
+{% block content %}
+<section id="team" class="pb-5">
+  <div class="container ">
+
+    <div class="row">
+      <div class="col">
+
+
+        <h4>WOHNEsdsdsdN</h4>
+      </div>
+
+    </div>
+    <form class="form" method="post">{% csrf_token %}
+      <div class='row'>
+
+
+        {% for field in forms.frage_form %}
+
+        {% if forloop.counter == 1 %}
+        {% else %}
+        <div class="col-md-4">
+          <div class="form-group">
+
+
+            {{ field.label_tag  }}
+
+            {{ field }}
+
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="submit" class="btn btn-primary" value="Ok">
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% if mein_zusatz_context %}
+        <p>{{ mein_zusatz_context.mein_ergebnis }}</p>
+        <p> {{ mein_zusatz_context.mein_zweites_ergebnis }}</p>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+<section>
+  <h1>Mein Modal</h1>
+
+  <form method="post">{% csrf_token %}
+    <div class="form-group">
+      <p>{{ forms.teilnahme_form }}</p>
+    </div>
+    {% if mein_zusatz_context %}
+    <input type="submit" class="btn btn-primary" value="Ok"> <br>
+    {% endif %}
+  </form>
+</section>
+
+
+
+
+
+
+
+{% endblock %}

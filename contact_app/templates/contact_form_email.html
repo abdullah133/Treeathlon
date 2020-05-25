@@ -1,0 +1,82 @@
+<html>
+
+<head>
+	<title>Bestellung und Rechnung</title>
+	<style>
+		body {
+			font-family: Arial;
+			font-size: 11px;
+			max-width: 100%;
+		}
+
+		table {
+			font-size: 11px;
+			margin-left: -3px;
+		}
+
+		table td {
+			font-size: 11px;
+			vertical-align: top;
+			min-width: 120px;
+		}
+
+
+		h1 {
+			font-size: 20px;
+
+			margin-bottom: 20px;
+		}
+
+		div {
+			min-width: 60px;
+		}
+
+		p {
+			margin-left: 20px;
+			line-height: 17px;
+			font-size: 11px;
+		}
+
+		table.tbl_order {
+			width: 100%;
+		}
+		table.tbl_order2 {
+			width: 100%;
+		}
+
+		table.tbl_order2 td {
+			width: 10px;
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<table class="tbl_order">
+		<tr>
+			<td colspan="6">
+
+				<br><br>
+				Hallo Abdullah,<br>
+				Du hast eine neue Nachricht von deiner Homepage!
+
+				<hr>
+				<br><b>Absender: {{email_from}}</b>
+				<br><b>Betreff: {{betreff}}</b>
+                <br><b>Nachricht: {{nachricht_from}}</b>
+				<br>
+			</td>
+		</tr>
+
+
+
+
+
+
+	</table>
+
+
+</body>
+
+</html>

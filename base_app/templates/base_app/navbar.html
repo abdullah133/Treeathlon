@@ -1,0 +1,18 @@
+{% load static %}
+
+      <nav id="nav-menu-container">
+
+        <ul class="nav-menu">
+
+          <li class="menu-active"><a href="{% url 'base_app:home_page' %}">Treeathlon</a></li>
+          <li><a href="{% url 'about_app:about_page' %}">Unser Team</a></li>
+          <li><a href="{% url 'spenden_app:spenden_page' %}">Mitlaufen</a></li>
+          <li><a href="{% url 'events_app:events_page' %}">Events</a></li>
+          <li><a href="{% url 'partner_app:partner_page' %}">Partner</a></li>
+          <li><a href="{% url 'post_app:post_page' %}">Blog</a></li>
+          <li><a href="{% url 'contact_app:contact_page' %}">Kontakt</a></li>
+          <li><a href="{% url 'privacy_app:privacy_page' %}">Datenschutz</a></li>
+
+        </ul>
+
+      </nav><!-- #nav-menu-container -->

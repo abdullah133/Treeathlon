@@ -1,0 +1,9 @@
+header.masthead {
+  margin-bottom: 50px;
+  background: url('/static/img/contact-bg.jpg') no-repeat 50% 50%;
+
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover
+}

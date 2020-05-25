@@ -1,0 +1,77 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+{% block title %}Partner{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'partner_app/css/custom.css' %}">
+{% endblock %}
+{% block content %}
+
+
+
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+
+
+
+<section id="causes-area section-gap">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-partner-area">
+            <div class="mu-partner-header section-title">
+              {% for element in partner_discriptions  %}
+              <h2 class="mu-heading-title"><span>{{element.title}}</span></h2>
+              <span class="mu-header-dot"></span>
+              <p>{{element.description}} </p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+        {% for element in partner_info  %}
+        <div class="col-md-4">
+          <div class="card mt-3">
+    <div class="container text-center">
+            <img class="img-fluid" src="{% if element.img %}{{ element.img.url }}{% else %}{% static 'img/download.png' %}{% endif %}" alt="Card image cap">
+
+
+
+
+              <p class="mt-3">{{element.content}}</p>
+
+              <a class="button" href="{{element.url}}">More Info</a>
+
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

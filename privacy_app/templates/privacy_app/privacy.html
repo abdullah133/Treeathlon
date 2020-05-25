@@ -1,0 +1,39 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+  <h1 class="h1_black">AGB- Datenschutzerklärung
+  </h1>
+  <br>
+
+  {% for element in privacy_description %}
+  <div>
+  <br>
+
+    <h3>{{ element.title }}</h3>
+    <br>
+
+    <p> {{element.content}}</p>
+  </div>
+
+  {% endfor %}
+  <br>
+  <br>
+  <br>
+</div>
+{% endblock %}

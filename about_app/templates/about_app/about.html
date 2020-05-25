@@ -1,0 +1,77 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+
+{% block title %}About{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'about_app/css/custom.css' %}">
+{% endblock %}
+
+
+
+
+{% block content %}
+<!-- <section class="contact-banner-area relative">
+
+</section> -->
+
+<!-- Team -->
+
+<section id="team" class="pb-5">
+  <div class="container ">
+    {% for element in team_description %}
+    <div class="row justify-content-center  ">
+      <div class="col-md-12 mt-100 ">
+        <h5 class="section-title h1">{{ element.title }}</h5>
+        <p>
+          {{ element.content }}
+        </p>
+      </div>
+
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+
+
+    <div class="row">
+      {% for team in teambilder %}
+
+      <!-- Team member -->
+      <div class="col-md-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <img src="{% if team.cover %}{{ team.cover.url }}{% else %}{% static 'img/download.png' %}{% endif %}" class="img-responsive" alt="me">
+                  <br>
+                  <br>
+                  <h4 class="card-title">{{ team.name }}</h4>
+                  <p class="card-text">{{ team.our_description }}</p>
+                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">{{ team.name }}</h4>
+                  <p class="card-text">{{ team.self_description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+              {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- Team -->
+
+{% endblock %}

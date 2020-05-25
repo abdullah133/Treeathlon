@@ -1,0 +1,67 @@
+{% extends 'base_app/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="mu-calc-content" id="calculator">
+								<div class='row'>
+									<div class="col-md-4">
+										<form>
+											{% csrf_token %}
+
+
+											<h4>WOHNEN</h4>
+											<div class="form-group">
+											{{ form }}
+
+											</div>
+											  <input type="submit" class="btn btn-primary" value="Ok"> <br>
+
+
+<h3>{{ text }}</h3>
+
+												<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TeilnehmenModal">
+													JETZT TEILNEHMEN
+												</button>
+												<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SuccessOrNotModal">
+													SUCCESS or NOT
+												</button> -->
+											</form>
+
+										</div>
+								</div>
+							</div>
+
+			<!-- Button trigger modal -->
+			<form method="POST" >
+								{% csrf_token %}
+			<!-- Modal -->
+			<div class="modal fade" id="TeilnehmenModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="TeilnehmenModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" style="display: inline-block;">Teilnehmen!</h3>
+						<button type="button" style="float: right;" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+
+	                    {{ form_jhgjhgjg.as_p }}
+
+						<div id="haftungText">Bitte bestätigen Sie die Richtigkeit der Angaben und klicken die Checkbox!</div>
+						<input type="checkbox" id="haftungCheckbox">Durch klicken dieser Box stimme ich zu, dass der Webseitenbetreiber alle meine Angaben speichern und zu analysezwecken nutzen darf<br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+						<button type="submit" class="btn btn-primary" id="AddPButton">Fortfahren</button>
+					</div>
+				</div>
+				</div>
+			</div>
+
+
+							</form>
+
+{% endblock %}

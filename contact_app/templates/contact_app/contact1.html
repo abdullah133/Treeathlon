@@ -1,0 +1,73 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% block title %}Kontakt{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'contact_app/contact_header.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="page-section cta">
+  <div class="container">
+
+
+
+    	<div class="contact1">
+    		<div class="container-contact1">
+    			<div class="contact1-pic js-tilt" data-tilt>
+    				<img src="{% static 'contact_app/images/img-01.png' %}" alt="IMG">
+    			</div>
+
+    			<form class="contact1-form validate-form"  method="post">
+              {% csrf_token %}
+    				<span class="contact1-form-title">
+    					Get in touch
+    				</span>
+
+
+            <div class="wrap-input1 validate-input">
+                {{ form.email.label_tag }}
+              {{ form.email }}
+    {{ form.email.errors }}
+              <span class="shadow-input1"></span>
+            </div>
+
+
+            <div class="wrap-input1 validate-input">
+              {{ form.betreff.label_tag }}
+            {{ form.betreff }}
+                {{ form.betreff.errors }}
+              <span class="shadow-input1"></span>
+            </div>
+
+
+
+    				<div class="wrap-input1 validate-input">
+                      {{ form.nachricht.label_tag }}
+    					  {{ form.nachricht }}
+                    {{ form.nachricht.errors }}
+    					<span class="shadow-input1"></span>
+    				</div>
+
+    				<div class="container-contact1-form-btn">
+    					<button class="contact1-form-btn" type="submit">
+    						<span>
+    							Send Email
+    							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    						</span>
+    					</button>
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+
+
+
+
+  </div>
+</section>
+{% endblock %}
