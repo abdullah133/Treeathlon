@@ -11,40 +11,40 @@ from django.conf import settings
 class BeschreibungenHomeSeiteAdmin(admin.ModelAdmin):
     list_display = ('title','description')
 
-    def has_add_permission(self, request):
-      return False
-
-
-    def has_delete_permission(self, request, obj=None):
-      return False
+    # def has_add_permission(self, request):
+    #   return False
+    #
+    #
+    # def has_delete_permission(self, request, obj=None):
+    #   return False
 
 class VisionAdmin(admin.ModelAdmin):
     list_display = ('title','description')
 
-    def has_add_permission(self, request):
-      return False
-
-
-    def has_delete_permission(self, request, obj=None):
-      return False
+    # def has_add_permission(self, request):
+    #   return False
+    #
+    #
+    # def has_delete_permission(self, request, obj=None):
+    #   return False
 
 class TreeathlonInZahlenAdmin(admin.ModelAdmin):
     list_display = ('title','spenden_number', 'content')
-    def has_add_permission(self, request):
-      return False
-
-
-    def has_delete_permission(self, request, obj=None):
-      return False
+    # def has_add_permission(self, request):
+    #   return False
+    #
+    #
+    # def has_delete_permission(self, request, obj=None):
+    #   return False
 
 class BackgroundImgDescriptionAdmin(admin.ModelAdmin):
     list_display = ('title',)
-    def has_add_permission(self, request):
-      return False
-
-
-    def has_delete_permission(self, request, obj=None):
-      return False
+    # def has_add_permission(self, request):
+    #   return False
+    #
+    #
+    # def has_delete_permission(self, request, obj=None):
+    #   return False
 
 
 
