@@ -10,7 +10,7 @@ class TeamAdmin(ImportExportModelAdmin):
 
 
 class TeamDescriptionaAdmin(admin.ModelAdmin):
-    list_display = ('title','content')
+    list_display = ['title','content']
 
     # def has_add_permission(self, request):
     #   return False
@@ -20,6 +20,7 @@ class TeamDescriptionaAdmin(admin.ModelAdmin):
     #   return False
 
 class ContactInfoAdmin(admin.ModelAdmin):
+    list_display = ['content',]
 
     # def has_add_permission(self, request):
     #   return False

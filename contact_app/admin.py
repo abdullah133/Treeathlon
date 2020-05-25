@@ -16,7 +16,7 @@ class ContactUsInfoAdmin(admin.ModelAdmin):
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('adresse','telefon', 'email')
-
+    # 
     # def has_add_permission(self, request):
     #   return False
     #
